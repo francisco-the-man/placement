@@ -1,0 +1,606 @@
+.dashboard {
+  min-height: 100vh;
+  background-color: #F5F5F5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 1rem 0;
+}
+
+.title {
+  font-family: 'Playwrite US Modern', cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.username {
+  font-family: 'PT Serif', serif;
+  font-size: 1.1rem;
+  color: black;
+}
+
+.userIcon {
+  opacity: 0.7;
+}
+
+.editNameButton {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.editNameButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.signOutButton {
+  font-family: 'PT Serif', serif;
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-left: 1rem;
+}
+
+.signOutButton:hover {
+  opacity: 0.8;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  font-family: 'PT Serif', serif;
+}
+
+.modalContent h3 {
+  font-family: 'Playwrite US Modern', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.modalContent p {
+  margin-bottom: 1.5rem;
+  color: black;
+}
+
+.nameInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'PT Serif', serif;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.nameInput:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.cancelButton,
+.saveButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-family: 'PT Serif', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.cancelButton {
+  background: #f5f5f5;
+  color: black;
+}
+
+.cancelButton:hover {
+  background: #e0e0e0;
+}
+
+.saveButton {
+  background: black;
+  color: white;
+}
+
+.saveButton:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.saveButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.createPartyModal {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 90%;
+  font-family: 'PT Serif', serif;
+}
+
+.createPartyTitle {
+  font-family: 'Playwrite US Modern', cursive;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: black;
+  text-align: left;
+}
+
+.formGroup {
+  margin-bottom: 2rem;
+}
+
+.formLabel {
+  display: block;
+  font-family: 'PT Serif', serif;
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.inputWrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.inputBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.partyNameInput {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'PT Serif', serif;
+  font-size: 1rem;
+  color: black;
+}
+
+.partyNameInput:disabled {
+  opacity: 0.6;
+}
+
+.dateInputs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dateInputGroup {
+  flex: 1;
+  min-width: 200px;
+}
+
+.dateLabel {
+  display: block;
+  font-family: 'PT Serif', serif;
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.dateInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-family: 'PT Serif', serif;
+  font-size: 1rem;
+  background: white;
+  color: black;
+}
+
+.dateInput:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.dateInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.createPartyButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+}
+
+.backButton,
+.savePartyButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'PT Serif', serif;
+  font-size: 1.1rem;
+  color: black;
+  padding: 0.75rem;
+  border-radius: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.backButton:hover:not(:disabled),
+.savePartyButton:hover:not(:disabled) {
+  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.backButton:disabled,
+.savePartyButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.content {
+  width: 100%;
+}
+
+.partiesSection {
+  width: 100%;
+}
+
+.partiesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.partiesTitle {
+  font-family: 'Playwrite US Modern', cursive;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+}
+
+.createButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'PT Serif', serif;
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.createButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+
+.partiesContainer {
+  width: 100%;
+  font-family: 'PT Serif', serif;
+}
+
+.partiesHeader {
+  display: grid;
+  grid-template-columns: 1fr 200px 100px 100px;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #333;
+  margin-bottom: 1rem;
+}
+
+.headerCell {
+  font-weight: 600;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.guestsHeader,
+.eventsHeader {
+  justify-content: center;
+  text-align: center;
+}
+
+.partiesData {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.partyRow {
+  display: grid;
+  grid-template-columns: 1fr 200px 100px 100px;
+  gap: 2rem;
+  padding: 1rem 0;
+  transition: opacity 0.2s ease;
+  align-items: center;
+}
+
+.partyRow:hover {
+  opacity: 0.7;
+}
+
+.dataCell {
+  color: black;
+}
+
+.nameCell {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.deletePartyButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deletePartyButton:hover:not(:disabled) {
+  opacity: 1;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.deletePartyButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.guestsCell,
+.eventsCell {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.sortable:hover {
+  opacity: 0.7;
+}
+
+.sortArrow {
+  opacity: 0.6;
+}
+
+.partyLink {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.partyLink:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.emptyState {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  font-family: 'PT Serif', serif;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .userSection {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .partiesHeader {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .partiesTitle {
+    font-size: 1.5rem;
+  }
+  
+  .partiesContainer {
+    font-size: 0.9rem;
+  }
+  
+  .partiesHeader {
+    grid-template-columns: 1fr 150px 80px 80px;
+    gap: 1.5rem;
+    padding: 0.75rem 0;
+  }
+  
+  .partyRow {
+    grid-template-columns: 1fr 150px 80px 80px;
+    gap: 1.5rem;
+    padding: 0.75rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .partiesTitle {
+    font-size: 1.3rem;
+  }
+  
+  .partiesContainer {
+    font-size: 0.8rem;
+    overflow-x: auto;
+  }
+  
+  .partiesHeader {
+    grid-template-columns: 1fr 120px 60px 60px;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    min-width: 400px;
+  }
+  
+  .partyRow {
+    grid-template-columns: 1fr 120px 60px 60px;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    min-width: 400px;
+  }
+  
+  .createButton {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .modalContent {
+    padding: 1.5rem;
+  }
+
+  .modalContent h3 {
+    font-size: 1.3rem;
+  }
+
+  .modalButtons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cancelButton,
+  .saveButton {
+    width: 100%;
+  }
+
+  .createPartyModal {
+    padding: 2rem;
+    max-width: 95%;
+  }
+
+  .createPartyTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+
+  .dateInputs {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dateInputGroup {
+    min-width: auto;
+  }
+
+  .createPartyButtons {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .backButton,
+  .savePartyButton {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+} 
