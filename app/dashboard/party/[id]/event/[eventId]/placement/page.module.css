@@ -177,19 +177,22 @@
   padding: 2rem;
   background-color: #f8f9fa;
   overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scroll */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   align-content: start;
+  height: auto; /* Allow natural height */
 }
 
 .teamContainer {
   background-color: white;
   border: 2px solid #333;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible; /* Allow content to show */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-height: 200px;
+  min-height: fit-content; /* Adjust to content size */
+  height: auto; /* Let it grow naturally */
   display: flex;
   flex-direction: column;
 }
@@ -213,7 +216,8 @@
   flex: 1;
   padding: 1rem;
   background-color: white;
-  min-height: 120px;
+  min-height: fit-content; /* Adjust to content size */
+  height: auto; /* Allow natural growth */
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -371,6 +375,23 @@
     grid-template-columns: 1fr;
     padding: 1rem;
     gap: 1rem;
+  }
+
+  .teamContainer {
+    min-height: auto; /* Remove fixed height on mobile */
+    overflow: visible; /* Allow content to show beyond container */
+    height: auto; /* Let container grow with content */
+  }
+
+  .teamMembers {
+    min-height: auto; /* Allow team members area to expand */
+    height: auto; /* Let members area grow with content */
+  }
+
+  .placementModal {
+    height: auto; /* Allow modal to grow */
+    max-height: 95vh; /* But limit to screen height */
+    overflow-y: auto; /* Add scrolling if needed */
   }
 
   .bottomNavigation {
